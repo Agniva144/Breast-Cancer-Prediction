@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>BREAST CANCER PREDICTION</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type='text/css' media='screen' href="{{ url_for('static',filename='css/main.css') }}">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="register_page">
+        <div class="form">
+            <form action="{{url_for('predict')}}" method="POST">
+                <h1>Please Fill Up the follwing details in accordance to Patient's record to get Prediction.</h1>
+
+                <!-- columns=['radius_mean','texture_mean','perimeter_mean','area_mean','smoothness_mean','diagnosis'] -->
+
+
+
+                Radius_mean: <input type="number" step=".01" name="radius" placeholder="Enter the radius_mean"><br>
+                Texture_mean: <input type="number" step=".01" name="texture" placeholder="Enter the texture_mean"><br>
+                Perimeter_mean: <input type="number" step=".01" name="perimeter" placeholder="Enter the perimeter_mean"><br>
+                Area_mean: <input type="number" name="area" step=".01" placeholder="Enter the area_mean"><br>
+                Smoothness_mean: <input type="number" name="smoothness" step=".01" placeholder="Enter the smoothness_mean"><br>
+                
+                <input type="submit" value="predict" class="submit">
+                
+            </form>
+
+            <h2>Prediction : &nbsp {{data}}</h2>
+        </div>
+    </div>
+
+</body>
+</html>
